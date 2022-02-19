@@ -144,16 +144,25 @@ void print(int mat[][MAX] ,int m,int n){
         std:: cout << "\n";
     }
 }
+void impli(int mat1[MAX][MAX],int mat2[MAX][MAX],int mat3[MAX][MAX]){
+    for(int i=0; i < MAX; i++)
+        for(int j=0; j < MAX; j++)
+        {
+            mat3[i][j]=0;
+            for(int k=0; k < MAX; k++)
+                mat3[i][j]+=mat1[i][k]*mat2[k][j];
+        }
+}
 
 TEST(MatrixTests, over) {
-    int mat[][MAX]{{1, 2,4},
-                   {3, 4,6},
-                   {5, 6,8}};
-    print(mat, 3, 3);
+    static int m1[MAX][MAX] {{21, 2}, {8, 2}, {54, 1}};
+    static int m2[MAX][MAX] {{33, 12,1}, {1, 1,1}};
+    int m3[MAX][MAX]{{0,0,0},{0,0,0},{0,0,0}};
+    impli(m1,m2,m3);
+    print(m3, 3, 3);
 
 }
 ///
-
 
 
 
