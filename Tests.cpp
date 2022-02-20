@@ -154,6 +154,7 @@ TEST(MatrixTests, implic) {
     Matrix<int> m3;
     m3 = m1 * m2;
     umnoprint(m3,3,3);
+}
 ///
 
 
