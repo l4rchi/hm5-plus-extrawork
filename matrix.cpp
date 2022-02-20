@@ -137,7 +137,7 @@ const Matrix<Type> Matrix<Type>::trans() const{
     }
     return new_matrix;
 }
-void print(int mat[][MAX] ,int m,int n){
+void print(int mat[MAX][MAX] ,int m,int n){
     for (int i = 0;i < m;i++) {
         for (int j = 0; j < n; j++) {
             std:: cout << mat[i][j] << " ";
