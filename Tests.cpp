@@ -135,25 +135,6 @@ TEST(MatrixTests, exeption) {
     ASSERT_THROW(m1*m2, MatricesBinaryOperationException);
 }
 ///zadanye s zacheta
-const int MAX = 100;
-void print(int mat[][MAX] ,int m,int n){
-    for (int i = 0;i < m;i++) {
-        for (int j = 0; j < n; j++) {
-            std:: cout << mat[i][j] << " ";
-        }
-        std:: cout << "\n";
-    }
-}
-void impli(int mat1[MAX][MAX],int mat2[MAX][MAX],int mat3[MAX][MAX]){
-    for(int i=0; i < MAX; i++)
-        for(int j=0; j < MAX; j++)
-        {
-            mat3[i][j]=0;
-            for(int k=0; k < MAX; k++)
-                mat3[i][j]+=mat1[i][k]*mat2[k][j];
-        }
-}
-
 TEST(MatrixTests, over) {
     static int m1[MAX][MAX] {{21, 2}, {8, 2}, {54, 1}};
     static int m2[MAX][MAX] {{33, 12,1}, {1, 1,1}};
@@ -161,7 +142,18 @@ TEST(MatrixTests, over) {
     impli(m1,m2,m3);
     print(m3, 3, 3);
 
+
 }
+///variant 2
+TEST(MatrixTests, implic) {
+    static Matrix<int> m1{{1, 2},
+                         {2, 2},
+                         {1, 1}};
+    static Matrix<int> m2{{1, 1, 2},
+                         {1, 1, 1}};
+    Matrix<int> m3;
+    m3 = m1 * m2;
+    umnoprint(m3,3,3);
 ///
 
 
