@@ -137,3 +137,29 @@ const Matrix<Type> Matrix<Type>::trans() const{
     }
     return new_matrix;
 }
+void print(int mat[][MAX] ,int m,int n){
+    for (int i = 0;i < m;i++) {
+        for (int j = 0; j < n; j++) {
+            std:: cout << mat[i][j] << " ";
+        }
+        std:: cout << "\n";
+    }
+}
+void impli(int mat1[MAX][MAX],int mat2[MAX][MAX],int mat3[MAX][MAX]){
+    for(int i=0; i < MAX; i++)
+        for(int j=0; j < MAX; j++)
+        {
+            mat3[i][j]=0;
+            for(int k=0; k < MAX; k++)
+                mat3[i][j]+=mat1[i][k]*mat2[k][j];
+        }
+}
+
+void umnoprint(Matrix<int>m1,int m,int n) {
+    for (int i = 0; i < m; i++) {
+        for (int j = 0; j < n; j++) {
+            std::cout << m1[i][j] << " ";
+        }
+        std::cout << "\n";
+    }
+}
